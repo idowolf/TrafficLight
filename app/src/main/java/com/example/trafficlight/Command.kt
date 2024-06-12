@@ -14,7 +14,6 @@ sealed class Command(val commandValue: Int) {
 
     companion object {
         fun Command.convertToUdp(): String {
-            Update(Pair(LedPosition.Red, Colors.Red))
             return when (this) {
                 is BrightnessControl -> "$commandValue,$brightness"
                 is Update -> "$commandValue,${

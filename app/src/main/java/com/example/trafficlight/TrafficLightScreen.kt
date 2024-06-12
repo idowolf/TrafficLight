@@ -77,9 +77,9 @@ private fun TrafficLight(onCommandPressed: (Command) -> Unit) {
         TrafficLightLed(
             Color.Red,
             onCommandPressed,
-            Pair(LedPosition.Red, Colors.Red),
-            Pair(LedPosition.Yellow, Colors.Off),
-            Pair(LedPosition.Green, Colors.Off)
+            Pair(LedPosition.Top, Colors.Red),
+            Pair(LedPosition.Middle, Colors.Off),
+            Pair(LedPosition.Bottom, Colors.Off)
         )
 
         Spacer(modifier = Modifier.size(50.dp))
@@ -87,8 +87,8 @@ private fun TrafficLight(onCommandPressed: (Command) -> Unit) {
         TrafficLightLed(
             Color.Yellow,
             onCommandPressed,
-            Pair(LedPosition.Yellow, if (preferencesManager.getBoolean(useYellowKey, false)) Colors.Yellow else Colors.Orange),
-            Pair(LedPosition.Green, Colors.Off)
+            Pair(LedPosition.Middle, if (preferencesManager.getBoolean(useYellowKey, false)) Colors.Yellow else Colors.Orang e),
+            Pair(LedPosition.Bottom, Colors.Off)
         )
 
         Spacer(modifier = Modifier.size(50.dp))
@@ -96,9 +96,9 @@ private fun TrafficLight(onCommandPressed: (Command) -> Unit) {
         TrafficLightLed(
             Color.Green,
             onCommandPressed,
-            Pair(LedPosition.Red, Colors.Off),
-            Pair(LedPosition.Yellow, Colors.Off),
-            Pair(LedPosition.Green, Colors.Green)
+            Pair(LedPosition.Top, Colors.Off),
+            Pair(LedPosition.Middle, Colors.Off),
+            Pair(LedPosition.Bottom, Colors.Green)
         )
     }
 }
